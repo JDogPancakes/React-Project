@@ -20,9 +20,8 @@ const Data = () => {
        if (value.length === 0) {
          setData([...resp.data]);
        } else if (isNaN(value)) {
-         //const regex = new RegExp(value);
-         let regex = RegExp(document.getElementById("search").value);
-         setData([...resp.data.filter(datum => (regex.test(datum.name.to) ))]);
+         const regex = new RegExp(value);
+         setData([...resp.data.filter(datum => (regex.test(datum.name) ))]);
        } 
       })
      };
